@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Information Lookup</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+        h1, h2 { color: #333; }
+        form { margin-bottom: 20px; }
+        input[type="text"] { padding: 5px; font-size: 16px; }
+        input[type="submit"] { padding: 5px 10px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #45a049; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .validity-date { font-size: 1.2em; font-weight: bold; color: #4CAF50; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Vehicle Information Lookup</h1>
+    <form method="POST">
+        <input type="text" name="mispar_rechev" placeholder="Enter plate number" required>
+        <input type="submit" value="Search">
+    </form>
+    {% if result %}
+        {% if result is string %}
+            <p>{{ result }}</p>
+        {% else %}
+            {% if result.get('tokef_dt') %}
+                <div class="validity-date">
+                    Your vehicle's driving test expires on: {{ result['tokef_dt'] }}
+                </div>
+            {% endif %}
+            <h2>Vehicle Details:</h2>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+                {% for key, value in result.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
