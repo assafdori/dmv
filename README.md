@@ -1,7 +1,7 @@
 # DMV - Find information about your vehicle 🚙
 
 
-#### This application qureies the Ministry of Transportation database to find information about your vehicle.
+#### This application queries the official Ministry of Transportation database to find information about your vehicle.
 
 ##### The application will provide the following information:
 - **Make** - The make of your vehicle
