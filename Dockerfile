@@ -19,7 +19,7 @@ RUN pip install --upgrade pip && \
 COPY ./app /app/
 
 # Expose the port the app runs on
-EXPOSE 5000
+EXPOSE 5050
 
 # Run the application
 CMD ["gunicorn", "--bind", "0.0.0.0:5050", "main:app"]
