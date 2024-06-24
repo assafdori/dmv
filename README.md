@@ -1,4 +1,4 @@
-# DMV - Find information about your vehicle
+# DMV - Find information about your vehicle 🚙
 
 
 #### This application qureies the Ministry of Transportation database to find information about your vehicle.
@@ -18,3 +18,9 @@
 ```bash
 docker run -p 5050:5050 asixl/dmv
 ```
+
+##### Access the application by visiting the following URL:
+```bash
+http://localhost:5050
+```
+
