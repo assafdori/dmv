@@ -13,6 +13,7 @@
 - **Registration Expiry Date** - The registration expiry date of your vehicle
 - **Vehicle Type** - The type of your vehicle
 - **Vehicle Class** - The class of your vehicle
+- **And much more...**
 
 ##### Run the application by starting a container with the following command:
 ```bash
